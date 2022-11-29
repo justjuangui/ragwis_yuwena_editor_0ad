@@ -1,0 +1,10 @@
+{
+	"name": "ragwis_yuwena",
+	"version": "0.0.1",
+	"label": "Ragwis Yuwena",
+	"url": "https://play0ad.com",
+	"description": "Map editor for 0AD",
+	"dependencies": [
+		"0ad=0.0.27"
+	]
+}

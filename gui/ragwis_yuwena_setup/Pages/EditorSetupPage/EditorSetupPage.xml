@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<object name="editorSetupPage">
+
+    <script directory="gui/ragwis_yuwena_setup/Pages/EditorSetupPage/EditorSettings/"/>
+    <script directory="gui/ragwis_yuwena_setup/Pages/EditorSetupPage/EditorSettings/General/Buttons/"/>
+    <script directory="gui/ragwis_yuwena_setup/Pages/EditorSetupPage/EditorSettings/General/Checkboxes/"/>
+    <script directory="gui/ragwis_yuwena_setup/Pages/EditorSetupPage/EditorSettings/General/Dropdowns/"/>
+
+    <script directory="gui/ragwis_yuwena_setup/Pages/EditorSetupPage/"/>
+    <script directory="gui/ragwis_yuwena_setup/Pages/EditorSetupPage/Panels/"/>
+    <script directory="gui/ragwis_yuwena_setup/Pages/EditorSetupPage/Panels/Buttons/"/>
+
+    <object name="mainPanel" size="24 40 100%-24 100%-60">
+
+        <object size="0 0 100%-416 100%">
+			<include file="gui/ragwis_yuwena_setup/Pages/EditorSetupPage/Panels/EditorSettingsPanel.xml"/>
+		</object>
+
+        <object size="100%-402 0 100% 100%">
+            
+            <object size="0 0 100% 336">
+			    <include file="gui/ragwis_yuwena_setup/Pages/EditorSetupPage/Panels/MapPreview.xml"/>
+		    </object>
+
+            <object size="0 350 100% 100%">
+			    <include file="gui/ragwis_yuwena_setup/Pages/EditorSetupPage/Panels/EditorDescription.xml"/>
+		    </object>
+
+        </object>
+
+    </object>
+
+    <object name="bottomPanel" size="0 0 100% 100%-24">
+
+    	<object name="bottomLeftPanel">
+
+			<object size="20 100%-32 100%-312 100%">
+				<include file="gui/ragwis_yuwena_setup/Pages/EditorSetupPage/Panels/Tooltip.xml"/>
+			</object>
+
+			<object size="0 100%-28 100%-320 100%">
+
+			</object>
+
+		</object>
+
+        <object name="bottomRightPanel" size="100%-314 100%-28 100% 100%">
+
+            <object size="0 0 140 100%">
+                <include file="gui/ragwis_yuwena_setup/Pages/EditorSetupPage/Panels/Buttons/CancelButton.xml"/>
+            </object>
+
+            <object	size="150 0 290 100%">
+            </object>
+
+        </object>
+
+    </object>
+
+</object>
