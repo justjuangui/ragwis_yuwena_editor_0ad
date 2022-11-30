@@ -4,8 +4,12 @@ EditorSettingControls.MapBrowser = class MapBrowser extends EditorSettingControl
 	{
 		super(...args);
 
-		this.button.tooltip = colorizeHotkey(this.HotkeyTooltip, this.HotkeyConfig);
-		Engine.SetGlobalHotkey(this.HotkeyConfig, "Press", this.onPress.bind(this));
+		g_GameSettings.editorData.watch(() => this.onEditorTypeChanged(), ["type"]);
+	}
+
+	onEditorTypeChanged()
+	{
+		this.setHidden(g_GameSettings.editorData.type === "new");
 	}
 
 	onSettingsLoaded()
@@ -28,9 +32,6 @@ EditorSettingControls.MapBrowser = class MapBrowser extends EditorSettingControl
 		this.setupWindow.pages.MapBrowserPage.openPage();
 	}
 };
-
-EditorSettingControls.MapBrowser.prototype.HotkeyConfig =
-	"gamesetup.mapbrowser.open";
 
 EditorSettingControls.MapBrowser.prototype.Caption =
 	translate("Browse Maps");

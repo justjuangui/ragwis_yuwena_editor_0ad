@@ -1,0 +1,17 @@
+{
+	"TranslatedKeys": ["Name", "Tooltip"],
+	"Data":
+	[
+		{
+			"Name": "New Map",
+			"Tooltip": "you can start from scratch your map",
+			"Type": "new",
+            "Default": true
+		},
+        {
+			"Name": "Load Map",
+			"Tooltip": "you can load a map for editing",
+			"Type": "load"
+		}
+	]
+}

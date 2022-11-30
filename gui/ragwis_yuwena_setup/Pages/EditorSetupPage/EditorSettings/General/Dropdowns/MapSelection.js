@@ -11,7 +11,16 @@ EditorSettingControls.MapSelection = class MapSelection extends EditorSettingCon
 			"name": setStringTags(this.RandomMapCaption, this.RandomItemTags),
 			"description": this.RandomMapDescription
 		};
+
+        g_GameSettings.editorData.watch(() => this.onEditorTypeChanged(), ["type"]);
 	}
+
+    onEditorTypeChanged()
+    {
+        this.setEnabled(g_GameSettings.editorData.type !== "new");
+        this.updateMapList();
+        this.render();
+    }
 
 	onSettingsLoaded()
 	{
@@ -50,7 +59,7 @@ EditorSettingControls.MapSelection = class MapSelection extends EditorSettingCon
 	{
 		if (!this.enabled)
 		{
-			const mapName = this.mapCache.getTranslatableMapName(g_GameSettings.map.mapType, g_GameSettings.map.map);
+			const mapName = this.mapCache.getTranslatableMapName(g_GameSettings.map.type, g_GameSettings.map.map);
 			this.label.caption = g_GameSettings.mapName.value || this.mapCache.translateMapName(mapName);
 			return;
 		}
@@ -70,11 +79,11 @@ EditorSettingControls.MapSelection = class MapSelection extends EditorSettingCon
 
 	updateMapList()
 	{
-		Engine.ProfileStart("updateMapSelectionList");
-
-		if (!g_GameSettings.map.type)
-			return;
-
+        if (g_GameSettings.editorData.type === "new" || !g_GameSettings.map.type)
+            return;
+		
+        Engine.ProfileStart("updateMapSelectionList");
+        
 		{
 			const values =
 				this.mapFilters.getFilteredMaps(

@@ -13,7 +13,8 @@ SetupWindowPages.EditorSetupPage = class
         // These classes manage GUI buttons.
         {
             this.panelButtons = {
-                "cancelButton": new CancelButton(setupWindow)
+                "cancelButton": new CancelButton(setupWindow),
+                "startEditorButton": new StartEditorButton(setupWindow)
             };
         }
 

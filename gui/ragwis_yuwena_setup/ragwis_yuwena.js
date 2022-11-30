@@ -4,6 +4,7 @@ const g_PopulationCapacities = prepareForDropdown(g_Settings && g_Settings.Popul
 const g_WorldPopulationCapacities = prepareForDropdown(g_Settings && g_Settings.WorldPopulationCapacities);
 const g_StartingResources = prepareForDropdown(g_Settings && g_Settings.StartingResources);
 const g_VictoryConditions = g_Settings && g_Settings.VictoryConditions;
+const g_EditorTypes = prepareForDropdown(loadSettingValuesFile("editor_types.json"));
 
 /**
  * Remembers which clients are assigned to which player slots and whether they are ready.

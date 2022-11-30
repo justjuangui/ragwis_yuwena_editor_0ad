@@ -106,6 +106,12 @@
 
     launchGame()
 	{
+		// In the editor the map is reveales for all
+		g_GameSettings.mapExploration.setRevealed(true);
+
+		// In the editor by default gameSpeed is 0
+		g_GameSettings.gameSpeed.setSpeed(0);
+
 		// This will resolve random settings & send game start messages.
 		// TODO: this will trigger observers, which is somewhat wasteful.
 		g_GameSettings.launchGame(g_PlayerAssignments, false);
@@ -117,7 +123,7 @@
 
     switchToLoadingPage(attributes)
 	{
-		Engine.SwitchGuiPage("page_loading.xml", {
+		Engine.SwitchGuiPage("page_ragwis_yuwena_loading.xml", {
 			"attribs": attributes?.initAttributes || g_GameSettings.finalizedAttributes,
 			"playerAssignments": g_PlayerAssignments
 		});
