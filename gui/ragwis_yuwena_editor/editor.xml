@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<objects>
+
+    <script directory="gui/common/"/>
+    <script directory="gui/ragwis_yuwena_editor/"/>    
+    
+    <object name="setupWindow" size="10 10 160 40">
+        <object
+            name="cancelButton"
+            type="button"
+            style="StoneButton"
+            z="21"
+        />
+    </object>
+</objects>

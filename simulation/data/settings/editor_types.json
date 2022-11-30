@@ -6,7 +6,7 @@
 			"Name": "New Map",
 			"Tooltip": "you can start from scratch your map",
 			"Type": "new",
-            "Default": true
+			"Default": true
 		},
         {
 			"Name": "Load Map",
