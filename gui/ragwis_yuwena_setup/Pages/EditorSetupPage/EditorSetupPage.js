@@ -1,7 +1,7 @@
 /**
  * This class owns all handlers of the editr setup page, excluding controllers that apply to all subpages and handlers for specific subpages.
  */
-SetupWindowPages.EditorSetupPage = class
+EditorSetupWindowPages.EditorSetupPage = class
 {
     constructor(setupWindow)
     {

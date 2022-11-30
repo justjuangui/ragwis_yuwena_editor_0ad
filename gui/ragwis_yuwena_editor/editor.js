@@ -6,7 +6,7 @@ var g_SetupWindow;
 
 function init(initData, hotloadData)
 {
-    g_SetupWindow = new SetupWindow(initData, hotloadData);
+    g_SetupWindow = new EditorWindow(initData, hotloadData);
 }
 
 function getHotloadData()

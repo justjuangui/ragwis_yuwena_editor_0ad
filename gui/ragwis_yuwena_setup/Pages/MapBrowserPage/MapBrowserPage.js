@@ -1,4 +1,4 @@
-SetupWindowPages.MapBrowserPage = class extends MapBrowser
+EditorSetupWindowPages.MapBrowserPage = class extends MapBrowser
 {
 	constructor(setupWindow)
 	{

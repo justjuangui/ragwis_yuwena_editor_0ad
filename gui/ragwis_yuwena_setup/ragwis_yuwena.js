@@ -45,7 +45,7 @@ function init(initData, hotloadData)
         }
     };
 
-    g_SetupWindow = new SetupWindow(initData, hotloadData);
+    g_SetupWindow = new EditorSetupWindow(initData, hotloadData);
 }
 
 function getHotloadData()

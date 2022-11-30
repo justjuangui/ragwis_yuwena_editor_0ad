@@ -1,22 +1,22 @@
 /**
  * This class stores the GameSetupPage and every subpage that is shown in the game setup.
  */
- class SetupWindowPages
- {
- }
+class EditorSetupWindowPages
+{
+}
 
- /**
- * The SetupWindow is the root class owning all other class instances.
+/**
+ * The EditorSetupWindow is the root class owning all other class instances.
  * The class shall be ineligible to perform any GUI object logic and shall defer that task to owned classes.
  */
-class SetupWindow
+class EditorSetupWindow
 {
     constructor(initData, hotloadData)
 	{
 		if (!g_Settings)
 			return;
-        
-        Engine.ProfileStart("SetupWindow");
+
+        Engine.ProfileStart("EditorSetupWindow");
 
         this.loadHandlers = new Set();
 		this.closePageHandlers = new Set();
@@ -37,8 +37,8 @@ class SetupWindow
 
         // These are the pages within the setup window that may use the controls defined above
 		this.pages = {};
-		for (let name in SetupWindowPages)
-			this.pages[name] = new SetupWindowPages[name](this);
+		for (let name in EditorSetupWindowPages)
+			this.pages[name] = new EditorSetupWindowPages[name](this);
 
         Engine.GetGUIObjectByName("setupWindow").onTick = () => this.onTick();
 
@@ -99,7 +99,7 @@ class SetupWindow
 
 		if (this.backPage)
 			Engine.SwitchGuiPage(this.backPage.page, this.backPage?.data);
-		
+
 		Engine.SwitchGuiPage("page_pregame.xml");
 	}
 }
