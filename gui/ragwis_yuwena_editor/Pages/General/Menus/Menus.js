@@ -18,14 +18,11 @@ EditorWindowPages.Menus = class
 		this.margin = menuButtons[0].size.top;
 		this.buttonHeight = menuButtons[0].size.bottom;
 
-		// All methods that iterate over property keys do so in the same order:
-		// First all Array indices, sorted numerically.
-		// Then all string keys (that are not indices), in the order in which they were created.
-		// Then all symbols, in the order in which they were created.
-		// So we are going to base in filename to sort the menu
-		// 01_FirstMenu.js
-		// 15_LastMenu.js
-		let handlerMenuButtons = Object.keys(MenuButtons.prototype);
+		// Menus will be sorting base on constant ORDER
+		// if this Constant isnt define it set to -1
+		let handlerMenuButtons = Object.keys(MenuButtons.prototype).sort(
+			(a, b) => (MenuButtons.prototype[a].ORDER || -1) - (MenuButtons.prototype[b].ORDER || -1)
+		);
 
 		if (handlerMenuButtons.length > menuButtons.length)
 			throw new Error(

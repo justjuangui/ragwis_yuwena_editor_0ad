@@ -12,3 +12,5 @@ MenuButtons.prototype.QuitMenuButton = class
 		this.setupWindow.closePage();
 	}
 }
+
+MenuButtons.prototype.QuitMenuButton.ORDER = 1000;
