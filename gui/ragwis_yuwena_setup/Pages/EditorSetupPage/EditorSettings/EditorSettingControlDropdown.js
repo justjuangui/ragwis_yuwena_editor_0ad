@@ -56,7 +56,7 @@ class EditorSettingControlDropdown extends EditorSettingControl
 /**
  * Highlight the "random" dropdownlist item.
  */
- EditorSettingControlDropdown.prototype.RandomItemTags = {
+EditorSettingControlDropdown.prototype.RandomItemTags = {
 	"color": "orange"
 };
 

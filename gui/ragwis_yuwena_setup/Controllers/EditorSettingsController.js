@@ -1,8 +1,8 @@
 /**
  * Controller for the GUI handling of gamesettings.
  */
- class EditorSettingsController
- {
+class EditorSettingsController
+{
     constructor(setupWindow, mapCache)
     {
         this.setupWindow = setupWindow;
@@ -56,7 +56,7 @@
     {
         if (hotloadData)
             this.parseSettings(hotloadData.initAttributes);
-        
+
         for (const handler of this.settingsLoadedHandlers)
 			handler();
 
@@ -128,4 +128,4 @@
 			"playerAssignments": g_PlayerAssignments
 		});
 	}
- }
+}

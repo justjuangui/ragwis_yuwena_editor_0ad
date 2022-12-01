@@ -45,4 +45,3 @@ class EditorSettingControlManager
             this.editorSettingControls[name].addAutocompleteEntries(name, entries);
     }
 }
- 

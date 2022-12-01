@@ -22,9 +22,6 @@ class EditorWindow
 		if (initData?.backPage)
 			this.backPage = initData.backPage;
 
-        this.cancelButton = Engine.GetGUIObjectByName("cancelButton");
-        this.cancelButton.caption = translate("Quit");
-        this.cancelButton.onPress = this.closePage.bind(this);
         // These class instances control central data and do not manage any GUI Object.
         this.controls = {
 		};
