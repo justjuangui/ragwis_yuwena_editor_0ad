@@ -18,6 +18,8 @@ class EditorWindow
         this.loadHandlers = new Set();
 		this.closePageHandlers = new Set();
 		this.getHotloadDataHandlers = new Set();
+		this.handleInputBeforeGuiHandlers = new Set();
+		this.handleInputAfterGuiHandlers = new Set();
 
 		if (initData?.backPage)
 			this.backPage = initData.backPage;
@@ -39,6 +41,52 @@ class EditorWindow
 
         Engine.ProfileStop();
     }
+
+	onHandleInputBeforeGui(ev, hoveredObject)
+	{
+		for (let handler of this.handleInputBeforeGuiHandlers)
+		{
+			if (handler(ev, hoveredObject) === true)
+			{
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	onHandleInputAfterGui(ev)
+	{
+		for (let handler of this.handleInputAfterGuiHandlers)
+		{
+			if (handler(ev) === true)
+			{
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	registerHandleInputBeforeGuiHandler(handler)
+	{
+		this.handleInputBeforeGuiHandlers.add(handler);
+	}
+
+	unregisterHandleInputBeforeGuiHandler(handler)
+	{
+		this.handleInputBeforeGuiHandlers.delete(handler);
+	}
+
+	registerHandleInputAfterGuiHandler(handler)
+	{
+		this.handleInputAfterGuiHandlers.add(handler);
+	}
+
+	unregisterHandleInputAfterGuiHandler(handler)
+	{
+		this.handleInputAfterGuiHandlers.delete(handler);
+	}
 
 	registerLoadHandler(handler)
 	{
