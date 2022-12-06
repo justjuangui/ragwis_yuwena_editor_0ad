@@ -6,6 +6,8 @@ var g_SetupWindow;
 
 function init(initData, hotloadData)
 {
+	// disabled constraint in camera
+	Engine.GameView_SetConstrainCameraEnabled(false);
     g_SetupWindow = new EditorWindow(initData, hotloadData);
 }
 
