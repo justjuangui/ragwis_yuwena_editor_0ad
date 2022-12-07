@@ -5,7 +5,7 @@ EditorSettingControls.MapFilter = class MapFilter extends EditorSettingControlDr
 		super(...args);
 
 		this.values = undefined;
-        
+
         g_GameSettings.editorData.watch(() => this.onEditorTypeChanged(), ["type"]);
 	}
 

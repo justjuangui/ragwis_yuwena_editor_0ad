@@ -29,6 +29,6 @@
 				<include file="gui/ragwis_yuwena_setup/Pages/EditorSetupPage/EditorSettings/EditorSettingControlSlider.xml"/>
 			</object>
 		</repeat>
-        
+
 	</object>
 </object>

@@ -81,9 +81,9 @@ EditorSettingControls.MapSelection = class MapSelection extends EditorSettingCon
 	{
         if (g_GameSettings.editorData.type === "new" || !g_GameSettings.map.type)
             return;
-		
+
         Engine.ProfileStart("updateMapSelectionList");
-        
+
 		{
 			const values =
 				this.mapFilters.getFilteredMaps(

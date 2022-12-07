@@ -15,13 +15,13 @@ EditorSettingControls.EditorType = class EditorType extends EditorSettingControl
     updatedEditorTypeSettings()
     {
         if (g_GameSettings.editorData.type === "new")
-        {            
+        {
             g_GameSettings.map.setType(this.editorMapTypeDefault);
             g_GameSettings.map.selectMap(this.editorMapDefault);
         } else {
             g_GameSettings.map.setType(this.editorMapTypeDefault);
             g_GameSettings.map.selectMap("");
-        }        
+        }
     }
 
     onSettingsLoaded()
@@ -61,7 +61,7 @@ EditorSettingControls.EditorType = class EditorType extends EditorSettingControl
     onSelectionChange(itemIdx)
     {
         g_GameSettings.editorData.setType(g_EditorTypes.Type[itemIdx]);
-        
+
         this.updatedEditorTypeSettings();
     }
 };

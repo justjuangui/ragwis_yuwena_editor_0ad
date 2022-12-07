@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<object name="topToolbarButtonsPanel"
+	type="image"
+	size="50%-120 0 50%+120 0"
+>
+	<repeat count="6">
+		<object
+			type="button"
+			size="4 4 32 32"
+			style="iconButton"
+			tooltip_style="sessionToolTip"
+			hidden="true"
+			name="topToolbarButton[n]"
+		>
+			<object name="topToolbarButtonIcon[n]" type="image" ghost="true" size="3 3 100%-4 100%-4"/>
+			<object name="topToolbarButtonSelection[n]" hidden="true" type="image" ghost="true" size="3 3 100%-4 100%-4" sprite="stretched:session/icons/corners.png"/>
+		</object>
+	</repeat>
+
+	<script directory="gui/ragwis_yuwena_editor/Pages/General/Toolbars/"/>
+	<script directory="gui/ragwis_yuwena_editor/Pages/General/Toolbars/ToolbarButtons/"/>
+</object>

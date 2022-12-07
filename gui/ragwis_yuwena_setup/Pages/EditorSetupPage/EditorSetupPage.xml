@@ -17,7 +17,7 @@
 		</object>
 
         <object size="100%-402 0 100% 100%">
-            
+
             <object size="0 0 100% 336">
 			    <include file="gui/ragwis_yuwena_setup/Pages/EditorSetupPage/Panels/MapPreview.xml"/>
 		    </object>

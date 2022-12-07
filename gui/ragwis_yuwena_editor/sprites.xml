@@ -31,4 +31,21 @@
 			texture_size="0 0 64 4"
 		/>
 	</sprite>
+
+	<!-- ================================  ================================ -->
+	<!-- Icon -->
+	<!-- ================================  ================================ -->
+	<sprite name="snIconPortrait">
+		<image texture="session/icons/bkg/portrait_black.dds" size="0 0 100% 100%"/>
+	</sprite>
+
+	<sprite name="snIconPortraitOver">
+		<effect add_color="42 42 42 0"/>
+		<image texture="session/icons/bkg/portrait_black.dds" size="0 0 100% 100%"/>
+	</sprite>
+
+	<sprite name="snIconPortraitDisabled">
+		<effect grayscale=""/>
+		<image texture="session/icons/bkg/portrait_black.dds" size="0 0 100% 100%"/>
+	</sprite>
 </sprites>
