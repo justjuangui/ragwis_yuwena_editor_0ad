@@ -4,7 +4,7 @@ TopToolbarButtons.prototype.TransformButton = class
 	{
 		this.button = button;
 		this.setupWindow = toolbar.setupWindow;
-		icon.sprite = "stretched:editor/toolbar/moveobject.png";
+		icon.sprite = this.IconSprite;
 	}
 
 	onToogle(isToogle)
@@ -14,3 +14,4 @@ TopToolbarButtons.prototype.TransformButton = class
 }
 
 TopToolbarButtons.prototype.TransformButton.ORDER = 1;
+TopToolbarButtons.prototype.TransformButton.prototype.IconSprite = "stretched:editor/toolbar/moveobject.png";

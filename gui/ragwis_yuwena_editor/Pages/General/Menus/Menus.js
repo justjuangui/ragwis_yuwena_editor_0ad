@@ -47,9 +47,9 @@ EditorWindowPages.Menus = class
 
 	onHandleInputBeforeGui(ev, hoveredObject)
 	{
-		if (!hoveredObject
-			&& (ev.type === SDLConstans.GUI_MAPPINGS_EVENTS.SDL_MOUSEBUTTONUP || ev.type === SDLConstans.GUI_MAPPINGS_EVENTS.SDL_MOUSEBUTTONDOWN)
-			&& (ev.button === SDLConstans.SDL_MOUSE_BUTTONS.SDL_BUTTON_LEFT || ev.button === SDLConstans.SDL_MOUSE_BUTTONS.SDL_BUTTON_RIGHT))
+		if (!hoveredObject &&
+			(ev.type === SDLConstans.GUI_MAPPINGS_EVENTS.SDL_MOUSEBUTTONUP || ev.type === SDLConstans.GUI_MAPPINGS_EVENTS.SDL_MOUSEBUTTONDOWN) &&
+			(ev.button === SDLConstans.SDL_MOUSE_BUTTONS.SDL_BUTTON_LEFT || ev.button === SDLConstans.SDL_MOUSE_BUTTONS.SDL_BUTTON_RIGHT))
 		{
 			this.close();
 		}

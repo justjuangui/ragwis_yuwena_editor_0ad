@@ -4,7 +4,7 @@ TopToolbarButtons.prototype.DefaultButton = class
 	{
 		this.button = button;
 		this.setupWindow = toolbar.setupWindow;
-		icon.sprite = "stretched:editor/toolbar/default.png";
+		icon.sprite = this.IconSprite;
 	}
 
 	onToogle(isToogle)
@@ -12,3 +12,5 @@ TopToolbarButtons.prototype.DefaultButton = class
 		warn(`${this.button.name} ${isToogle}`);
 	}
 }
+
+TopToolbarButtons.prototype.DefaultButton.IconSprite = "stretched:editor/toolbar/default.png";

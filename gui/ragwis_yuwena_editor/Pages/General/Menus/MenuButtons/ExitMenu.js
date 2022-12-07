@@ -3,7 +3,7 @@ MenuButtons.prototype.QuitMenuButton = class
 	constructor(menu, button)
 	{
 		this.button = button;
-		this.button.caption = translate("Exit");
+		this.button.caption = this.Caption;
 		this.setupWindow = menu.setupWindow;
 	}
 
@@ -14,3 +14,4 @@ MenuButtons.prototype.QuitMenuButton = class
 }
 
 MenuButtons.prototype.QuitMenuButton.ORDER = 1000;
+MenuButtons.prototype.QuitMenuButton.prototype.Caption = translate("Exit");
