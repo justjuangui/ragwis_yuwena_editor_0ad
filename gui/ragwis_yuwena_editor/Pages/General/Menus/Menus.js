@@ -41,6 +41,18 @@ EditorWindowPages.Menus = class
 		size.top = -this.endPosition;
 		size.bottom = 0;
 		this.menuButtonPanel.size = size;
+
+		this.setupWindow.registerHandleInputBeforeGuiHandler(this.onHandleInputBeforeGui.bind(this));
+	}
+
+	onHandleInputBeforeGui(ev, hoveredObject)
+	{
+		if (!hoveredObject
+			&& (ev.type === SDLConstans.GUI_MAPPINGS_EVENTS.SDL_MOUSEBUTTONUP || ev.type === SDLConstans.GUI_MAPPINGS_EVENTS.SDL_MOUSEBUTTONDOWN)
+			&& (ev.button === SDLConstans.SDL_MOUSE_BUTTONS.SDL_BUTTON_LEFT || ev.button === SDLConstans.SDL_MOUSE_BUTTONS.SDL_BUTTON_RIGHT))
+		{
+			this.close();
+		}
 	}
 
 	toogle()
