@@ -4,6 +4,7 @@ TopToolbarButtons.prototype.DefaultButton = class
 	{
 		this.button = button;
 		this.setupWindow = toolbar.setupWindow;
+		this.button.tooltip = this.Tooltip;
 		icon.sprite = this.IconSprite;
 	}
 
@@ -14,3 +15,4 @@ TopToolbarButtons.prototype.DefaultButton = class
 }
 
 TopToolbarButtons.prototype.DefaultButton.prototype.IconSprite = "stretched:editor/toolbar/default.png";
+TopToolbarButtons.prototype.DefaultButton.prototype.Tooltip = translate("Default");

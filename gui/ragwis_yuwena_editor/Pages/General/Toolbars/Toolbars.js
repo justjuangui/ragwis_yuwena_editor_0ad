@@ -21,7 +21,7 @@ EditorWindowPages.TopToolBar = class
 
 		if (handlerTopToolbarButtons.length > topToolbarButtons.length)
 			throw new Error(
-				"There are " + handlerNames.length + " top toolbar buttons defined, " +
+				"There are " + handlerTopToolbarButtons.length + " top toolbar buttons defined, " +
 				"but only " + topToolbarButtons.length  + " objects!"
 			);
 

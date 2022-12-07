@@ -48,4 +48,18 @@
 		<effect grayscale=""/>
 		<image texture="session/icons/bkg/portrait_black.dds" size="0 0 100% 100%"/>
 	</sprite>
+
+	<!-- ================================  ================================ -->
+	<!-- Tooltips -->
+	<!-- ================================  ================================ -->
+	<sprite name="BackgroundSessionTooltip">
+		<image
+			backcolor="darkbrown"
+			size="0 0 100% 100%"
+		/>
+		<image backcolor="gold" size="0 0 100% 1"/>
+		<image backcolor="gold" size="0 100%-1 100% 100%"/>
+		<image backcolor="gold" size="0 0 1 100%"/>
+		<image backcolor="gold" size="100%-1 0 100% 100%"/>
+	</sprite>
 </sprites>

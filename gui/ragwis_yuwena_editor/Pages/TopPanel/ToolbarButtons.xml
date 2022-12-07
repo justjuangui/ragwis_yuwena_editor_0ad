@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <object name="topToolbarButtonsPanel"
 	type="image"
-	size="50%-120 0 50%+120 0"
+	size="50%-140 0 50%+140 0"
 >
-	<repeat count="6">
+	<repeat count="7">
 		<object
 			type="button"
 			size="4 4 32 32"

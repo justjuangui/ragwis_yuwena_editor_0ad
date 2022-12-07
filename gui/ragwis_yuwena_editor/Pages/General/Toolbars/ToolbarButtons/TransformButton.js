@@ -4,6 +4,7 @@ TopToolbarButtons.prototype.TransformButton = class
 	{
 		this.button = button;
 		this.setupWindow = toolbar.setupWindow;
+		this.button.tooltip = this.Tooltip;
 		icon.sprite = this.IconSprite;
 	}
 
@@ -15,3 +16,4 @@ TopToolbarButtons.prototype.TransformButton = class
 
 TopToolbarButtons.prototype.TransformButton.ORDER = 1;
 TopToolbarButtons.prototype.TransformButton.prototype.IconSprite = "stretched:editor/toolbar/moveobject.png";
+TopToolbarButtons.prototype.TransformButton.prototype.Tooltip = translate("Move/rotate object");
