@@ -13,4 +13,4 @@ TopToolbarButtons.prototype.DefaultButton = class
 	}
 }
 
-TopToolbarButtons.prototype.DefaultButton.IconSprite = "stretched:editor/toolbar/default.png";
+TopToolbarButtons.prototype.DefaultButton.prototype.IconSprite = "stretched:editor/toolbar/default.png";
