@@ -28,4 +28,7 @@ If you want to test, you should place this in the mod user folder. [More informa
 ![alt loading](./docs/images/loading.jpg)
 ### Editor GUI
 ![alt editor](./docs/images/editor.jpg)
-Toolbar and menu in plugabble way
+- Toolbar plugabble
+- Menu plugable
+- SimRate set to 0
+- Reveal the map on in editor
