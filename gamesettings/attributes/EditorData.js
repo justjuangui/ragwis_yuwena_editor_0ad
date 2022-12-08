@@ -7,13 +7,13 @@ GameSettings.prototype.Attributes.EditorData = class EditorData extends GameSett
 
 	toInitAttributes(attribs)
 	{
-		attribs.settings.EditorType = this.type;
+		attribs.editorType = this.type;
 	}
 
 	fromInitAttributes(attribs)
 	{
-		if (!!this.getLegacySetting(attribs, "EditorType"))
-			this.setType(this.getLegacySetting(attribs, "EditorType"));
+		if (attribs.editorType)
+			this.setType(attribs.editorType);
 	}
 
 	setType(type)

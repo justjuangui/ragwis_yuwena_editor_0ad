@@ -106,9 +106,6 @@ class EditorSettingsController
 
     launchGame()
 	{
-		// In the editor the map is reveales for all
-		g_GameSettings.mapExploration.setRevealed(true);
-
 		// In the editor by default gameSpeed is 0
 		g_GameSettings.gameSpeed.setSpeed(0);
 
