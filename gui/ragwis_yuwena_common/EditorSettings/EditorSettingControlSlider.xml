@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <object name="sliderSettingFrame[n]" size="0 2 100% 36" hidden="true">
 
-	<include file="gui/ragwis_yuwena_setup/Pages/EditorSetupPage/EditorSettings/EditorSettingControlLabels.xml"/>
+	<include file="gui/ragwis_yuwena_common/EditorSettings/EditorSettingControlLabels.xml"/>
 
 	<object
 		name="sliderSettingControl[n]"

@@ -8,25 +8,25 @@
 		<!-- There is currently only one button, so don't add un-necessary objects. -->
 		<repeat count="1" var="n">
 			<object>
-				<include file="gui/ragwis_yuwena_setup/Pages/EditorSetupPage/EditorSettings/EditorSettingControlButton.xml"/>
+				<include file="gui/ragwis_yuwena_common/EditorSettings/EditorSettingControlButton.xml"/>
 			</object>
 		</repeat>
 
 		<repeat count="15" var="n">
 			<object>
-				<include file="gui/ragwis_yuwena_setup/Pages/EditorSetupPage/EditorSettings/EditorSettingControlDropdown.xml"/>
+				<include file="gui/ragwis_yuwena_common/EditorSettings/EditorSettingControlDropdown.xml"/>
 			</object>
 		</repeat>
 
 		<repeat count="15" var="n">
 			<object>
-				<include file="gui/ragwis_yuwena_setup/Pages/EditorSetupPage/EditorSettings/EditorSettingControlCheckbox.xml"/>
+				<include file="gui/ragwis_yuwena_common/EditorSettings/EditorSettingControlCheckbox.xml"/>
 			</object>
 		</repeat>
 
 		<repeat count="15" var="n">
 			<object>
-				<include file="gui/ragwis_yuwena_setup/Pages/EditorSetupPage/EditorSettings/EditorSettingControlSlider.xml"/>
+				<include file="gui/ragwis_yuwena_common/EditorSettings/EditorSettingControlSlider.xml"/>
 			</object>
 		</repeat>
 

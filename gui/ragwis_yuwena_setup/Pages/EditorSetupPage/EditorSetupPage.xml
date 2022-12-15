@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <object name="editorSetupPage">
 
-    <script directory="gui/ragwis_yuwena_setup/Pages/EditorSetupPage/EditorSettings/"/>
+    <script directory="gui/ragwis_yuwena_common/EditorSettings/"/>
+
+	<script directory="gui/ragwis_yuwena_setup/Pages/EditorSetupPage/EditorSettings/"/>
     <script directory="gui/ragwis_yuwena_setup/Pages/EditorSetupPage/EditorSettings/General/Buttons/"/>
     <script directory="gui/ragwis_yuwena_setup/Pages/EditorSetupPage/EditorSettings/General/Checkboxes/"/>
     <script directory="gui/ragwis_yuwena_setup/Pages/EditorSetupPage/EditorSettings/General/Dropdowns/"/>
@@ -19,12 +21,12 @@
         <object size="100%-402 0 100% 100%">
 
             <object size="0 0 100% 336">
-			    <include file="gui/ragwis_yuwena_setup/Pages/EditorSetupPage/Panels/MapPreview.xml"/>
-		    </object>
+				<include file="gui/ragwis_yuwena_setup/Pages/EditorSetupPage/Panels/MapPreview.xml"/>
+			</object>
 
             <object size="0 350 100% 100%">
-			    <include file="gui/ragwis_yuwena_setup/Pages/EditorSetupPage/Panels/EditorDescription.xml"/>
-		    </object>
+				<include file="gui/ragwis_yuwena_setup/Pages/EditorSetupPage/Panels/EditorDescription.xml"/>
+			</object>
 
         </object>
 
@@ -32,7 +34,7 @@
 
     <object name="bottomPanel" size="0 0 100% 100%-24">
 
-    	<object name="bottomLeftPanel">
+		<object name="bottomLeftPanel">
 
 			<object size="20 100%-32 100%-312 100%">
 				<include file="gui/ragwis_yuwena_setup/Pages/EditorSetupPage/Panels/Tooltip.xml"/>

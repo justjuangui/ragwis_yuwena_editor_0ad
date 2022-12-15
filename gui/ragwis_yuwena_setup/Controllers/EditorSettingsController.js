@@ -89,7 +89,7 @@ class EditorSettingsController
         g_GameSettings.fromInitAttributes(settings);
     }
 
- 	/**
+	/**
 	 * This should be called whenever the GUI layout needs to be updated.
 	 * Triggers on the next GUI tick to avoid un-necessary layout.
 	 */
