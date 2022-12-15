@@ -31,21 +31,21 @@ var g_SetupWindow;
 
 function init(initData, hotloadData)
 {
-    // Editor only use local players from now
-    let name = singleplayerName();
+	// Editor only use local players from now
+	let name = singleplayerName();
 
-    // Replace empty player name when entering a single-player match for the first time.
-    Engine.ConfigDB_CreateAndSaveValue("user", "playername.singleplayer", name);
+	// Replace empty player name when entering a single-player match for the first time.
+	Engine.ConfigDB_CreateAndSaveValue("user", "playername.singleplayer", name);
 
-    // By default, assign the player to the first slot.
-    g_PlayerAssignments = {
-        "local": {
-            "name": name,
-            "player": 1
-        }
-    };
+	// By default, assign the player to the first slot.
+	g_PlayerAssignments = {
+		"local": {
+			"name": name,
+			"player": 1
+		}
+	};
 
-    g_SetupWindow = new EditorSetupWindow(initData, hotloadData);
+	g_SetupWindow = new EditorSetupWindow(initData, hotloadData);
 }
 
 function getHotloadData()

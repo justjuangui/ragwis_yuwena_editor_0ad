@@ -13,7 +13,7 @@ function init(initData, hotloadData)
 	// disabled constraint in camera
 	Engine.GameView_SetConstrainCameraEnabled(false);
 
-    g_SetupWindow = new EditorWindow(initData, hotloadData);
+	g_SetupWindow = new EditorWindow(initData, hotloadData);
 }
 
 function getHotloadData()

@@ -11,37 +11,37 @@ class EditorSettingControls
  */
 class EditorSettingControlManager
 {
-    constructor(setupWindow)
-    {
-        this.setupWindow = setupWindow;
+	constructor(setupWindow)
+	{
+		this.setupWindow = setupWindow;
 
-        this.rows = {};
-        this.editorSettingControls = {};
+		this.rows = {};
+		this.editorSettingControls = {};
 
-        for (let name in EditorSettingControls)
-            this.editorSettingControls[name] =
-                new EditorSettingControls[name](this);
-    }
+		for (let name in EditorSettingControls)
+			this.editorSettingControls[name] =
+				new EditorSettingControls[name](this);
+	}
 
-    getNextRow(name)
-    {
-        if (this.rows[name] === undefined)
-            this.rows[name] = 0;
-        else
-            ++this.rows[name];
+	getNextRow(name)
+	{
+		if (this.rows[name] === undefined)
+			this.rows[name] = 0;
+		else
+			++this.rows[name];
 
-        return this.rows[name];
-    }
+		return this.rows[name];
+	}
 
-    updateSettingVisibility()
-    {
-        for (let name in this.editorSettingControls)
-            this.editorSettingControls[name].updateVisibility();
-    }
+	updateSettingVisibility()
+	{
+		for (let name in this.editorSettingControls)
+			this.editorSettingControls[name].updateVisibility();
+	}
 
-    addAutocompleteEntries(entries)
-    {
-        for (let name in this.editorSettingControls)
-            this.editorSettingControls[name].addAutocompleteEntries(name, entries);
-    }
+	addAutocompleteEntries(entries)
+	{
+		for (let name in this.editorSettingControls)
+			this.editorSettingControls[name].addAutocompleteEntries(name, entries);
+	}
 }

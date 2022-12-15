@@ -11,14 +11,14 @@ class MapPreview
 		g_GameSettings.map.watch(() => this.renderName(), ["map"]);
 		g_GameSettings.mapPreview.watch(() => this.renderPreview(), ["value"]);
 
-        setupWindow.registerLoadHandler(this.onLoad.bind(this));
+		setupWindow.registerLoadHandler(this.onLoad.bind(this));
 	}
 
-    onLoad()
-    {
-        this.renderName();
-        this.renderPreview();
-    }
+	onLoad()
+	{
+		this.renderName();
+		this.renderPreview();
+	}
 
 	renderName()
 	{

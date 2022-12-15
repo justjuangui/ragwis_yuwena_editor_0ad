@@ -11,14 +11,14 @@ class EditorSetupWindowPages
  */
 class EditorSetupWindow
 {
-    constructor(initData, hotloadData)
+	constructor(initData, hotloadData)
 	{
 		if (!g_Settings)
 			return;
 
-        Engine.ProfileStart("EditorSetupWindow");
+		Engine.ProfileStart("EditorSetupWindow");
 
-        this.loadHandlers = new Set();
+		this.loadHandlers = new Set();
 		this.closePageHandlers = new Set();
 		this.getHotloadDataHandlers = new Set();
 
@@ -28,26 +28,26 @@ class EditorSetupWindow
 		const mapCache = new MapCache();
 		g_GameSettings = new GameSettings().init(mapCache);
 
-        // These class instances control central data and do not manage any GUI Object.
-        this.controls = {
+		// These class instances control central data and do not manage any GUI Object.
+		this.controls = {
 			"editorSettingsController": new EditorSettingsController(this, mapCache),
 			"mapCache": mapCache,
 			"mapFilters": new MapFilters(mapCache)
 		};
 
-        // These are the pages within the setup window that may use the controls defined above
+		// These are the pages within the setup window that may use the controls defined above
 		this.pages = {};
 		for (let name in EditorSetupWindowPages)
 			this.pages[name] = new EditorSetupWindowPages[name](this);
 
-        Engine.GetGUIObjectByName("setupWindow").onTick = () => this.onTick();
+		Engine.GetGUIObjectByName("setupWindow").onTick = () => this.onTick();
 
-        // This event is triggered after all classes have been instantiated and subscribed to each others events
+		// This event is triggered after all classes have been instantiated and subscribed to each others events
 		for (let handler of this.loadHandlers)
-        handler(initData, hotloadData);
+		handler(initData, hotloadData);
 
-        Engine.ProfileStop();
-    }
+		Engine.ProfileStop();
+	}
 
 	registerLoadHandler(handler)
 	{

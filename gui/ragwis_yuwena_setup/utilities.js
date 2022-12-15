@@ -1,7 +1,7 @@
 function getEditorDescription(initAttributes, mapCache)
 {
-    let titles = [];
-    if (initAttributes.map == "random")
+	let titles = [];
+	if (initAttributes.map == "random")
 		titles.push({
 			"label": translateWithContext("Map Selection", "Random Map"),
 			"value": translate("Randomly select a map from the list.")
@@ -44,7 +44,7 @@ function getEditorDescription(initAttributes, mapCache)
 		});
 	}
 
-    if (initAttributes.settings.Nomad !== undefined)
+	if (initAttributes.settings.Nomad !== undefined)
 		titles.push({
 			"label": initAttributes.settings.Nomad ? translate("Nomad Mode") : translate("Civic Centers"),
 			"value":
@@ -53,10 +53,10 @@ function getEditorDescription(initAttributes, mapCache)
 					translate("Players start with a Civic Center.")
 		});
 
-    return titles.map(title => sprintf(translate("%(label)s %(details)s"), {
-        "label": coloredText(title.label, g_DescriptionHighlight),
-        "details":
-            title.value === true ? translateWithContext("game setup option", "enabled") :
-                title.value || translateWithContext("game setup option", "disabled")
-    })).join("\n");
+	return titles.map(title => sprintf(translate("%(label)s %(details)s"), {
+		"label": coloredText(title.label, g_DescriptionHighlight),
+		"details":
+			title.value === true ? translateWithContext("game setup option", "enabled") :
+				title.value || translateWithContext("game setup option", "disabled")
+	})).join("\n");
 }

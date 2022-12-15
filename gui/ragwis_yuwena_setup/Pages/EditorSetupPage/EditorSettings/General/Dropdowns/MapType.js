@@ -6,72 +6,72 @@
  */
 EditorSettingControls.MapType = class MapType extends EditorSettingControlDropdown
 {
-    constructor(...args)
-    {
-        super(...args);
+	constructor(...args)
+	{
+		super(...args);
 
-        this.dropdown.list = g_MapTypes.Title;
-        this.dropdown.list_data = g_MapTypes.Name;
+		this.dropdown.list = g_MapTypes.Title;
+		this.dropdown.list_data = g_MapTypes.Name;
 
-        g_GameSettings.editorData.watch(() => this.onEditorTypeChanged(), ["type"]);
-    }
+		g_GameSettings.editorData.watch(() => this.onEditorTypeChanged(), ["type"]);
+	}
 
-    onEditorTypeChanged()
-    {
-        this.setEnabled(g_GameSettings.editorData.type !== "new");
-        this.setHidden(g_GameSettings.editorData.type === "new");
-        this.render();
-    }
+	onEditorTypeChanged()
+	{
+		this.setEnabled(g_GameSettings.editorData.type !== "new");
+		this.setHidden(g_GameSettings.editorData.type === "new");
+		this.render();
+	}
 
-    onSettingsLoaded()
-    {
-        if (this.editorSettingsController.guiData.lockSettings?.map)
-            this.setEnabled(false);
-        else
-        {
-            g_GameSettings.map.watch(() => this.render(), ["type"]);
+	onSettingsLoaded()
+	{
+		if (this.editorSettingsController.guiData.lockSettings?.map)
+			this.setEnabled(false);
+		else
+		{
+			g_GameSettings.map.watch(() => this.render(), ["type"]);
 
-            // Select a default map type if none are currently chosen.
-            // This in cascade will select a default filter and a default map.
-            if (!g_GameSettings.map.type)
-                g_GameSettings.map.setType(g_MapTypes.Name[g_MapTypes.Default]);
-        }
+			// Select a default map type if none are currently chosen.
+			// This in cascade will select a default filter and a default map.
+			if (!g_GameSettings.map.type)
+				g_GameSettings.map.setType(g_MapTypes.Name[g_MapTypes.Default]);
+		}
 
-        this.render();
-    }
+		this.render();
+	}
 
-    onHoverChange()
-    {
-        this.dropdown.tooltip = g_MapTypes.Description[this.dropdown.hovered] || this.Tooltip;
-    }
+	onHoverChange()
+	{
+		this.dropdown.tooltip = g_MapTypes.Description[this.dropdown.hovered] || this.Tooltip;
+	}
 
-    render()
-    {
-        if (!this.enabled)
-        {
-            if (!this.hidden)
-                this.setHidden(true);
-            return;
-        }
+	render()
+	{
+		if (!this.enabled)
+		{
+			if (!this.hidden)
+				this.setHidden(true);
+			return;
+		}
 
-        this.setSelectedValue(g_GameSettings.map.type);
-    }
+		this.setSelectedValue(g_GameSettings.map.type);
+	}
 
-    getAutocompleteEntries()
-    {
-        return g_MapTypes.Title;
-    }
+	getAutocompleteEntries()
+	{
+		return g_MapTypes.Title;
+	}
 
-    onSelectionChange(itemIdx)
-    {
-        g_GameSettings.map.setType(g_MapTypes.Name[itemIdx]);
-    }
+	onSelectionChange(itemIdx)
+	{
+		g_GameSettings.map.setType(g_MapTypes.Name[itemIdx]);
+	}
 };
 
 EditorSettingControls.MapType.prototype.TitleCaption =
-    translate("Map Type");
+	translate("Map Type");
 
 EditorSettingControls.MapType.prototype.Tooltip =
-    translate("Select a map type.");
+	translate("Select a map type.");
 
 EditorSettingControls.MapType.prototype.AutocompleteOrder = 0;

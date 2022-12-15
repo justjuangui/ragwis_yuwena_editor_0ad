@@ -7,7 +7,7 @@ class StartEditorButton
 		this.startEditorButton = Engine.GetGUIObjectByName("startEditorButton");
 		this.startEditorButton.caption = this.Caption;
 		this.startEditorButton.onPress = this.onPress.bind(this);
-        this.startEditorButton.tooltip = this.Tooltip;
+		this.startEditorButton.tooltip = this.Tooltip;
 	}
 
 	onPress()

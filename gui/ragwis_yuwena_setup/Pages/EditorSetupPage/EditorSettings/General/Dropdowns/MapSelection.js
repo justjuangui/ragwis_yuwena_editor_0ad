@@ -12,15 +12,15 @@ EditorSettingControls.MapSelection = class MapSelection extends EditorSettingCon
 			"description": this.RandomMapDescription
 		};
 
-        g_GameSettings.editorData.watch(() => this.onEditorTypeChanged(), ["type"]);
+		g_GameSettings.editorData.watch(() => this.onEditorTypeChanged(), ["type"]);
 	}
 
-    onEditorTypeChanged()
-    {
-        this.setEnabled(g_GameSettings.editorData.type !== "new");
-        this.updateMapList();
-        this.render();
-    }
+	onEditorTypeChanged()
+	{
+		this.setEnabled(g_GameSettings.editorData.type !== "new");
+		this.updateMapList();
+		this.render();
+	}
 
 	onSettingsLoaded()
 	{
@@ -79,10 +79,10 @@ EditorSettingControls.MapSelection = class MapSelection extends EditorSettingCon
 
 	updateMapList()
 	{
-        if (g_GameSettings.editorData.type === "new" || !g_GameSettings.map.type)
-            return;
+		if (g_GameSettings.editorData.type === "new" || !g_GameSettings.map.type)
+			return;
 
-        Engine.ProfileStart("updateMapSelectionList");
+		Engine.ProfileStart("updateMapSelectionList");
 
 		{
 			const values =

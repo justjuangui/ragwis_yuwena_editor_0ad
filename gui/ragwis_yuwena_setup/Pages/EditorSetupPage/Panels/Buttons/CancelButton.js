@@ -8,7 +8,7 @@ class CancelButton
 		this.cancelButton.caption = this.Caption;
 		this.cancelButton.tooltip = this.TooltipMenu;
 		this.cancelButton.onPress = setupWindow.closePage.bind(setupWindow);
-    }
+	}
 }
 
 CancelButton.prototype.Caption =

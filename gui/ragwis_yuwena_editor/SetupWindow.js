@@ -11,11 +11,11 @@ class EditorWindowPages
  */
 class EditorWindow
 {
-    constructor(initData, hotloadData)
+	constructor(initData, hotloadData)
 	{
-        Engine.ProfileStart("EditorWindow");
+		Engine.ProfileStart("EditorWindow");
 
-        this.loadHandlers = new Set();
+		this.loadHandlers = new Set();
 		this.closePageHandlers = new Set();
 		this.getHotloadDataHandlers = new Set();
 		this.handleInputBeforeGuiHandlers = new Set();
@@ -24,23 +24,24 @@ class EditorWindow
 		if (initData?.backPage)
 			this.backPage = initData.backPage;
 
-        // These class instances control central data and do not manage any GUI Object.
-        this.controls = {
+		g_GameSettings = new GameSettings().init(mapCache);
+		// These class instances control central data and do not manage any GUI Object.
+		this.controls = {
 		};
 
-        // These are the pages within the setup window that may use the controls defined above
+		// These are the pages within the setup window that may use the controls defined above
 		this.pages = {};
 		for (let name in EditorWindowPages)
 			this.pages[name] = new EditorWindowPages[name](this);
 
-        Engine.GetGUIObjectByName("setupWindow").onTick = () => this.onTick();
+		Engine.GetGUIObjectByName("setupWindow").onTick = () => this.onTick();
 
-        // This event is triggered after all classes have been instantiated and subscribed to each others events
+		// This event is triggered after all classes have been instantiated and subscribed to each others events
 		for (let handler of this.loadHandlers)
-        handler(initData, hotloadData);
+		handler(initData, hotloadData);
 
-        Engine.ProfileStop();
-    }
+		Engine.ProfileStop();
+	}
 
 	onHandleInputBeforeGui(ev, hoveredObject)
 	{
@@ -48,7 +49,7 @@ class EditorWindow
 		{
 			if (handler(ev, hoveredObject) === true)
 			{
-				return true;
+	return true;
 			}
 		}
 
@@ -61,7 +62,7 @@ class EditorWindow
 		{
 			if (handler(ev) === true)
 			{
-				return true;
+	return true;
 			}
 		}
 
@@ -136,8 +137,8 @@ class EditorWindow
 		for (let handler of this.closePageHandlers)
 			handler();
 
-        // TODO: Validate if we can close the ditor (saveMap and different things)
-        Engine.EndGame();
+		// TODO: Validate if we can close the ditor (saveMap and different things)
+		Engine.EndGame();
 
 		if (this.backPage)
 			Engine.SwitchGuiPage(this.backPage.page, this.backPage?.data);

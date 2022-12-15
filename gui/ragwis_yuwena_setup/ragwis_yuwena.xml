@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <objects>
 
-    <script directory="gui/common/"/>
-    <script directory="gui/maps/"/>
-    <script directory="gamesettings/"/>
+	<script directory="gui/common/"/>
+	<script directory="gui/maps/"/>
+	<script directory="gamesettings/"/>
 	<script directory="gamesettings/attributes/"/>
-    <script directory="gui/ragwis_yuwena_setup/"/>
-    <script directory="gui/ragwis_yuwena_setup/Controllers/"/>
+	<script directory="gui/ragwis_yuwena_setup/"/>
+	<script directory="gui/ragwis_yuwena_setup/Controllers/"/>
 
-    <object type="image" style="ModernWindow" name="setupWindow">
-        <object style="TitleText" type="text" size="50%-128 4 50%+128 36">
+	<object type="image" style="ModernWindow" name="setupWindow">
+		<object style="TitleText" type="text" size="50%-128 4 50%+128 36">
 			<translatableAttribute id="caption">Editor Setup</translatableAttribute>
 		</object>
 
-        <include file="gui/ragwis_yuwena_setup/Pages/EditorSetupPage/EditorSetupPage.xml"/>
-        <include file="gui/ragwis_yuwena_setup/Pages/MapBrowserPage/MapBrowserPage.xml"/>
-    </object>
+		<include file="gui/ragwis_yuwena_setup/Pages/EditorSetupPage/EditorSetupPage.xml"/>
+		<include file="gui/ragwis_yuwena_setup/Pages/MapBrowserPage/MapBrowserPage.xml"/>
+	</object>
 </objects>

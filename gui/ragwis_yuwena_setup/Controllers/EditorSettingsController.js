@@ -3,21 +3,21 @@
  */
 class EditorSettingsController
 {
-    constructor(setupWindow, mapCache)
-    {
-        this.setupWindow = setupWindow;
+	constructor(setupWindow, mapCache)
+	{
+		this.setupWindow = setupWindow;
 		this.mapCache = mapCache;
 
-        this.guiData = new EditorSettingsGuiData();
+		this.guiData = new EditorSettingsGuiData();
 
-        this.updateLayoutHandlers = new Set();
+		this.updateLayoutHandlers = new Set();
 		this.settingsChangeHandlers = new Set();
 		this.loadingChangeHandlers = new Set();
 		this.settingsLoadedHandlers = new Set();
 
-        setupWindow.registerLoadHandler(this.onLoad.bind(this));
-        setupWindow.registerGetHotloadDataHandler(this.onGetHotloadData.bind(this));
-    }
+		setupWindow.registerLoadHandler(this.onLoad.bind(this));
+		setupWindow.registerGetHotloadDataHandler(this.onGetHotloadData.bind(this));
+	}
 
 	/**
 	 * @param handler will be called when the layout needs to be updated.
@@ -52,19 +52,19 @@ class EditorSettingsController
 		this.settingsLoadedHandlers.add(handler);
 	}
 
-    onLoad(initData, hotloadData)
-    {
-        if (hotloadData)
-            this.parseSettings(hotloadData.initAttributes);
+	onLoad(initData, hotloadData)
+	{
+		if (hotloadData)
+			this.parseSettings(hotloadData.initAttributes);
 
-        for (const handler of this.settingsLoadedHandlers)
+		for (const handler of this.settingsLoadedHandlers)
 			handler();
 
 		this.updateLayout();
 
-    }
+	}
 
-    onGetHotloadData(object)
+	onGetHotloadData(object)
 	{
 		object.initAttributes = this.getSettings();
 	}
@@ -72,22 +72,22 @@ class EditorSettingsController
 	/**
 	 * Returns the InitAttributes, augmented by GUI-specific data.
 	 */
-    getSettings()
-    {
-        let ret = g_GameSettings.toInitAttributes();
-        ret.guiData = this.guiData.Serialize();
-        return ret;
-    }
+	getSettings()
+	{
+		let ret = g_GameSettings.toInitAttributes();
+		ret.guiData = this.guiData.Serialize();
+		return ret;
+	}
 
-    /**
-     * Parse the following settings.
-     */
-    parseSettings(settings)
-    {
-        if (settings.guiData)
-            this.guiData.Deserialize(settings.guiData);
-        g_GameSettings.fromInitAttributes(settings);
-    }
+	/**
+	 * Parse the following settings.
+	 */
+	parseSettings(settings)
+	{
+		if (settings.guiData)
+			this.guiData.Deserialize(settings.guiData);
+		g_GameSettings.fromInitAttributes(settings);
+	}
 
 	/**
 	 * This should be called whenever the GUI layout needs to be updated.
@@ -104,7 +104,7 @@ class EditorSettingsController
 		}, 0);
 	}
 
-    launchGame()
+	launchGame()
 	{
 		// In the editor by default gameSpeed is 0
 		g_GameSettings.gameSpeed.setSpeed(0);
@@ -118,7 +118,7 @@ class EditorSettingsController
 		this.switchToLoadingPage();
 	}
 
-    switchToLoadingPage(attributes)
+	switchToLoadingPage(attributes)
 	{
 		Engine.SwitchGuiPage("page_ragwis_yuwena_loading.xml", {
 			"attribs": attributes?.initAttributes || g_GameSettings.finalizedAttributes,
