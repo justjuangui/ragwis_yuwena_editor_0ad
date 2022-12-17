@@ -8,9 +8,6 @@ class MapSettingsController
 		this.settingsChangeHandlers = new Set();
 		this.loadingChangeHandlers = new Set();
 		this.settingsLoadedHandlers = new Set();
-
-		setupWindow.registerLoadHandler(this.onLoad.bind(this));
-		setupWindow.registerGetHotloadDataHandler(this.onGetHotloadData.bind(this));
 	}
 
 	registerUpdateLayoutHandler(handler)
@@ -33,10 +30,14 @@ class MapSettingsController
 		this.settingsLoadedHandlers.add(handler);
 	}
 
-	onLoad(initData, hotloadData)
+	loadMapSettings()
 	{
-		if (hotloadData)
-			this.parseSettings(hotloadData.initAttributes);
+		let currentSettings = Engine.GetMapSettings();
+		warn(JSON.stringify(currentSettings));
+		this.parseSettings({
+			editorType: "maps",
+			settings: currentSettings
+		});
 
 		for (const handler of this.settingsLoadedHandlers)
 			handler();
@@ -52,15 +53,13 @@ class MapSettingsController
 
 	getSettings()
 	{
-		let ret = g_GameSettings.toInitAttributes();
+		let ret = this.setupWindow.controls["gameSettings"].toInitAttributes();
 		return ret;
 	}
 
 	parseSettings(settings)
 	{
-		if (settings.guiData)
-			this.guiData.Deserialize(settings.guiData);
-		g_GameSettings.fromInitAttributes(settings);
+		this.setupWindow.controls["gameSettings"].fromInitAttributes(settings);
 	}
 
 	updateLayout()

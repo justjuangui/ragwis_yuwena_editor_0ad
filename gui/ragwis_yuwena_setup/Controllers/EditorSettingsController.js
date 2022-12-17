@@ -106,22 +106,28 @@ class EditorSettingsController
 
 	launchGame()
 	{
+		g_GameSettings.pickRandomItems();
 		// In the editor by default gameSpeed is 0
-		g_GameSettings.gameSpeed.setSpeed(0);
+		// we are going to init the map with all default configuration
+		// TODO: Missing randon maps
+		const editorAttributes = {
+			gameSpeed: 0,
+			editorType: g_GameSettings.editorData.type,
+			mapType: g_GameSettings.map.type,
+			map: g_GameSettings.map.map
+		}
 
-		// This will resolve random settings & send game start messages.
-		// TODO: this will trigger observers, which is somewhat wasteful.
-		g_GameSettings.launchGame(g_PlayerAssignments, false);
+		Engine.StartGame(editorAttributes, g_PlayerAssignments.local.player, false);
 
 		// Switch to the loading page right away,
 		// the GUI will otherwise show the unrandomised settings.
-		this.switchToLoadingPage();
+		this.switchToLoadingPage(editorAttributes);
 	}
 
 	switchToLoadingPage(attributes)
 	{
 		Engine.SwitchGuiPage("page_ragwis_yuwena_loading.xml", {
-			"attribs": attributes?.initAttributes || g_GameSettings.finalizedAttributes,
+			"attribs": attributes,
 			"playerAssignments": g_PlayerAssignments
 		});
 	}

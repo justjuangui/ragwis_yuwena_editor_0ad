@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<object name="textboxSettingFrame[n]" size="0 2 100% 32" hidden="true">
+
+	<include file="gui/ragwis_yuwena_common/EditorSettings/EditorSettingControlLabels.xml"/>
+	<object
+		name="textboxSettingControl[n]"
+		type="input"
+		size="175 0 100% 28"
+		style="ModernInput"
+		tooltip_style="onscreenToolTip"
+		hidden="true"
+		z="1"
+	/>
+</object>

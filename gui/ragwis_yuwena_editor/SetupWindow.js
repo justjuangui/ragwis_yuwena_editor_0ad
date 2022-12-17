@@ -25,12 +25,13 @@ class EditorWindow
 			this.backPage = initData.backPage;
 
 		const mapCache = new MapCache();
-		g_GameSettings = new GameSettings().init(mapCache);
+		const gameSettings = new GameSettings().init(mapCache);
 
 		// These class instances control central data and do not manage any GUI Object.
 		this.controls = {
 			"editorSettingsController": new MapSettingsController(this),
 			"guiController": new GuiController(this),
+			"gameSettings": gameSettings,
 			"mapCache": mapCache,
 		};
 

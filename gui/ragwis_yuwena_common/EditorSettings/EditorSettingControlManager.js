@@ -39,6 +39,15 @@ class EditorSettingControlManager
 			this.editorSettingControls[name].updateVisibility();
 	}
 
+	hideSettingByName(fnName)
+	{
+		for (let name in this.editorSettingControls)
+		{
+			this.editorSettingControls[name].hidden = fnName(name);
+			this.editorSettingControls[name].updateVisibility();
+		}
+	}
+
 	addAutocompleteEntries(entries)
 	{
 		for (let name in this.editorSettingControls)

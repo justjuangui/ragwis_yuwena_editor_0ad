@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <object name="settingsWindow" hidden="true" z="100">
+	<script directory="gui/ragwis_yuwena_common/EditorSettings/"/>
 	<script directory="gui/ragwis_yuwena_editor/Pages/General/Settings/" />
+	<script directory="gui/ragwis_yuwena_editor/Pages/General/Settings/Controls/" />
+
 	<!-- Add a translucent black background to fade out the menu page -->
 	<object type="image" sprite="ModernFade"/>
 
@@ -9,6 +12,43 @@
 
 		<object style="ModernLabelText" type="text" size="50%-128 -16 50%+128 16" name="settigsWindowTitle" />
 
+		<object size="16 32 210 100%-60">
+			<object name="settingsWindowTabButtons" type="image">
+				<repeat count="20">
+					<object name="settingsWindowTabButton[n]" style="ModernTabButtonVertical" type="button" size="0 0 100% 100%" hidden="true">
+						<object type="text" name="settingsWindowTabButtonText[n]" style="ModernLabelText" ghost="true"/>
+					</object>
+				</repeat>
+			</object>
+		</object>
+
+		<object name="settingsWindowControls" type="image" sprite="ModernDarkBoxGold" size="226 32 100%-16 100%-60">
+			<repeat count="15" var="n">
+				<object>
+					<include file="gui/ragwis_yuwena_common/EditorSettings/EditorSettingControlDropdown.xml"/>
+				</object>
+			</repeat>
+
+			<repeat count="15" var="n">
+				<object>
+					<include file="gui/ragwis_yuwena_common/EditorSettings/EditorSettingControlCheckbox.xml"/>
+				</object>
+			</repeat>
+
+			<repeat count="15" var="n">
+				<object>
+					<include file="gui/ragwis_yuwena_common/EditorSettings/EditorSettingControlSlider.xml"/>
+				</object>
+			</repeat>
+
+			<repeat count="15" var="n">
+				<object>
+					<include file="gui/ragwis_yuwena_common/EditorSettings/EditorSettingControlTextbox.xml"/>
+				</object>
+			</repeat>
+		</object>
+
+		<object name="onscreenToolTip" type="text" font="sans-14" textcolor="white"	hidden="true" sprite="BackgroundTranslucent" size="16 100%-44 50%+144 100%-16"/>
 
 		<object name="settingsWindowSaveButton" type="button" style="ModernButtonRed" size="50%+4 100%-44 50%+160 100%-16" />
 
