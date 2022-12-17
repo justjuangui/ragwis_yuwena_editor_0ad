@@ -3,7 +3,12 @@
 
 	<script directory="gui/common/"/>
 	<script directory="gui/maps/"/>
+
+	<script directory="gamesettings/"/>
+	<script directory="gamesettings/attributes/"/>
+
 	<script directory="gui/ragwis_yuwena_editor/"/>
+	<script directory="gui/ragwis_yuwena_editor/Controllers/"/>
 
 	<object name="setupWindow">
 

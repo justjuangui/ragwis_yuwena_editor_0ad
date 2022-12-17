@@ -1,4 +1,10 @@
 /**
+ * Holds the actual settings & related logic.
+ * Global out of convenience in GUI controls.
+ */
+var g_GameSettings;
+
+/**
  * This instance owns all handlers that control
  * the two synchronized states g_EditorSettings and g_PlayerAssignments.
  */
